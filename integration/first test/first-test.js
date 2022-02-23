@@ -1,24 +1,25 @@
-context('Google homepage', () => {
-
+context('Saucedemo orders', () => {
 
 
     beforeEach(() => {
 
-      cy.visit('https://www.google.se/')
+      cy.visit('https://www.saucedemo.com/')
 
-      cy.get('#L2AGLb > .QS5gu').click()
-
-      
-    })
   
-    it('Sveriges statsminister', function () {
+    })
+  //inloggning till saucedemo
 
- //sökmotorn ska ge mig en träff på statsministern
-      cy.get('.gLFyf.gsfi').type('Vem är sveriges statsminister?')
+    it('Sign in', function () {
+      cy
+      .visit('https://www.saucedemo.com/')
+
+ 
+      .get('#user-name').type('standard_user')
       
- // search click button
-      cy.get('.gNO89b')
-      .contains('Sök på Google').should('be.visible')
+
+      .get('#password').type('secret_sauce')
+      
+      .get('#login-button')
       
       .click()
 
