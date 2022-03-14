@@ -1,0 +1,27 @@
+pipeline{
+
+    agent any
+
+    parameters (
+        string(name:'SPEC' defaultValue "cypress/integration/first test", "description:Enter this script path to get my results")
+        choice(name: 'Browser'), choices: ['chrome', 'edge', 'firefox']  "description: Choice which browser i want to choose"
+    }
+
+options{
+ansiColor ('xterm')    
+
+}
+stages{
+  stage('buildingg')¨
+   echo "building my tests"
+}
+stage ('testing'){
+    steps{
+          bat "npn i"
+          bat "npx cypress run --browser ${edge} --spec ${cypress/integration/first test}"
+    }
+stage('Deploying'){
+    echo "deploy the tests"
+
+}
+    }
