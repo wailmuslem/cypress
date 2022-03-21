@@ -19,8 +19,6 @@ describe('The Oscars awards', () => {
     .first()
     .click()
 
-    .get('.nominees-widget__title')
-    .should('have.text', 'The 94th Annual Academy Awards')
 
     //Best Movies assertions
     .get(':nth-child(1) > .event-widgets__award-categories > :nth-child(1) > .event-widgets__award-category-name')
